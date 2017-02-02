@@ -12,7 +12,7 @@
               <?php comments_popup_link( '', __( '1 Comment' ), __( '% Comments' ), 'comments', '' ); ?>
             </div>
 
-            <h2 class="title"><?php the_title()?></h2>
+            <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title()?></a></h2>
 
             <?php
               if ( has_post_thumbnail() ) {
