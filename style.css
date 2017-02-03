@@ -216,7 +216,7 @@ body {
   line-height: 1.7;
 }
 
-.single-post #author {
+.single-post #post-author {
   margin-top: 40px;
 }
 
@@ -244,12 +244,47 @@ body {
   list-style-type: none;
 }
 
+.single-post #comments .comment-list .children {
+  list-style-type: none;
+}
+
 .single-post #comments .comment-body {
   margin-bottom: 30px;
   padding: 0 10px 5px;
   background-color: #fff;
-  border: 1px solid #bdc3c7;
+  border: 1px solid #bdc3c7;  
 }
+
+.single-post #comments .bypostauthor .comment-body {
+  border-color: #253940;
+  border-left-width: 5px;
+}
+
+.single-post #comments .comment-body .comment-author img {
+  margin-left: -10px;
+}
+
+.single-post #comments .comment-body .comment-author time {
+  float: right;
+  margin-top: 4px;
+  font-size: 0.875rem;
+
+}
+
+.single-post #comments .comment-body .comment-content {
+  margin-top: 12px;
+}
+
+.single-post #comments .comment-form-comment label,
+.single-post #comments .comment-form label {
+  display: block
+}
+
+.single-post #comments .comment-form-comment #comment {
+  width: 100%;
+}
+
+
 
 /* Page */
 #page {

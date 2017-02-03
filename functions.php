@@ -145,3 +145,53 @@ function avalon_pagination( $pages = '', $range = 4 ) {
   }
 }
 
+if ( ! function_exists( 'avalon_comment' ) ) {
+  /**
+   * Avalon comment template
+   *
+   * @param array $comment the comment array.
+   * @param array $args the comment args.
+   * @param int   $depth the comment depth.
+   * @since 1.0.0
+   */
+  function avalon_comment( $comment, $args, $depth ) {
+    if ( 'div' == $args['style'] ) {
+      $tag = 'div';
+      $add_below = 'comment';
+    } else {
+      $tag = 'li';
+      $add_below = 'div-comment';
+    }
+    ?>
+    <<?php echo esc_attr( $tag ); ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <div class="comment-body">
+    <div class="comment-meta commentmetadata">
+      <div class="comment-author vcard">
+      <?php echo get_avatar( $comment, 56 ); ?>
+      <?php printf( wp_kses_post( '<cite class="fn">%s</cite>', 'avalon' ), get_comment_author_link() ); ?>
+      <?php echo '<time datetime="' . get_comment_date( 'c' ) . '">' . get_comment_date() . '</time>'; ?>
+      </div>
+      <?php if ( '0' == $comment->comment_approved ) : ?>
+        <em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'avalon' ); ?></em>
+        <br />
+      <?php endif; ?>
+
+    </div>
+    <?php if ( 'div' != $args['style'] ) : ?>
+    <div id="div-comment-<?php comment_ID() ?>" class="comment-content">
+    <?php endif; ?>
+    <div class="comment-text">
+    <?php comment_text(); ?>
+    </div>
+    <div class="reply">
+    <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+    <?php edit_comment_link( __( 'Edit', 'avalon' ), '  ', '' ); ?>
+    </div>
+    </div>
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+    <?php endif; ?>
+  <?php
+  }
+}
+

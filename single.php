@@ -19,7 +19,7 @@
             <?php the_content() ?>
           </div>
           
-          <div id="author">
+          <div id="post-author">
             <img id="photo" src="images/post-image.jpg" class="img-circle">
             <span><?php the_author() ?></span>
           </div>
