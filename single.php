@@ -20,7 +20,7 @@
           </div>
           
           <div id="post-author">
-            <img id="photo" src="images/post-image.jpg" class="img-circle">
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 48, 'retro', '', array( 'class' => 'img-circle' ) ); ?>
             <span><?php the_author() ?></span>
           </div>
 

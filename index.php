@@ -31,6 +31,8 @@
     <?php
         endwhile;
         avalon_pagination();
+      else:
+        echo '<h2>' . __( 'No Results', 'avalon') . '</h2>';
       endif;
     ?>
   </div><!--end #blog-->

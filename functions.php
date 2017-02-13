@@ -167,12 +167,12 @@ if ( ! function_exists( 'avalon_comment' ) ) {
     <div class="comment-body">
     <div class="comment-meta commentmetadata">
       <div class="comment-author vcard">
-      <?php echo get_avatar( $comment, 56 ); ?>
+      <?php echo get_avatar( $comment, 42 ); ?>
       <?php printf( wp_kses_post( '<cite class="fn">%s</cite>', 'avalon' ), get_comment_author_link() ); ?>
       <?php echo '<time datetime="' . get_comment_date( 'c' ) . '">' . get_comment_date() . '</time>'; ?>
       </div>
       <?php if ( '0' == $comment->comment_approved ) : ?>
-        <em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'avalon' ); ?></em>
+        <div class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'avalon' ); ?></div>
         <br />
       <?php endif; ?>
 

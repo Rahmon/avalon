@@ -23,7 +23,7 @@ a, a.category {
 }
 
 a:hover, a:focus, a.category:focus {
-  color: #253940 !important;
+  color: #253940;
   text-decoration: none;
 }
 
@@ -91,6 +91,10 @@ body {
 .navbar-default .navbar-brand {
   color: #f5f7fa;
   font-weight: 600;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #253940;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -218,15 +222,13 @@ body {
 
 .single-post #post-author {
   margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #bdc3c7;
 }
 
-.single-post #author #photo {
-  width: 100px;
-  height: 100px;
-}
-
-.single-post #author span {
+.single-post #post-author span {
   margin-left: 15px;
+  font-size: 1.375rem;
 }
 
 .single-post #comments {
@@ -268,11 +270,20 @@ body {
   float: right;
   margin-top: 4px;
   font-size: 0.875rem;
+}
 
+.single-post #comments .comment-body .comment-awaiting-moderation {
+  margin-bottom: -30px;
+  color: #bdc3c7;
+  text-align: center;
 }
 
 .single-post #comments .comment-body .comment-content {
   margin-top: 12px;
+}
+
+.single-post #comments .comment-body .comment-content .comment-reply-link {
+  font-size: 14px;
 }
 
 .single-post #comments .comment-form-comment label,
