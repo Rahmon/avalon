@@ -195,3 +195,29 @@ if ( ! function_exists( 'avalon_comment' ) ) {
   }
 }
 
+/**
+ * Customize Theme
+ */
+
+add_action( 'customize_register', 'avalon_customizer_options' );
+
+function avalon_customizer_options( $wp_customize ) {
+  $wp_customize->add_setting(
+    'avalon_body_background_color', 
+    array(
+      'default' => '#f5f7fa', 
+    )
+  );
+ 
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'avalon_body_background_color', 
+      array(
+        'label' => __( 'Background Color', 'avalon' ), 
+        'section' => 'colors', 
+        'settings' => 'avalon_body_background_color' 
+      )
+    )
+ );
+}
