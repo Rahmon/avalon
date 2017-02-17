@@ -202,22 +202,136 @@ if ( ! function_exists( 'avalon_comment' ) ) {
 add_action( 'customize_register', 'avalon_customizer_options' );
 
 function avalon_customizer_options( $wp_customize ) {
-  $wp_customize->add_setting(
-    'avalon_body_background_color', 
+  $colors[] = array(
+    'slug' => 'avalon_header_background_color',
+    'default' => '#349bc0',
+    'label' => __( 'Header Background', 'avalon' ),
+  );
+
+  $colors[] = array(
+    'slug' => 'avalon_main_background_color',
+    'default' => '#f5f7fa',
+    'label' => __( 'Main Background', 'avalon' ),
+  );
+
+  $colors[] = array(
+    'slug' => 'avalon_widget_header_background_color',
+    'default' => '#bdc3c7',
+    'label' => __( 'Widget Header Background', 'avalon' ),
+  );
+
+  foreach ( $colors as $color ) {
+    $wp_customize->add_setting(
+      $color[ 'slug' ], array(
+        'default' => $color[ 'default' ],
+        'type' => 'option',
+        'capability' => 'edit_theme_options'
+      )
+    );
+
+    $wp_customize->add_control(
+      new WP_Customize_Color_Control(
+        $wp_customize,
+        $color[ 'slug' ], 
+        array(
+          'label' => $color[ 'label' ], 
+          'section' => 'colors', 
+          'settings' => $color[ 'slug' ] 
+        )
+      )
+    );
+  }
+
+  $wp_customize->add_section(
+    'social_media_settings_section',
     array(
-      'default' => '#f5f7fa', 
+      'title' => __( 'Social Media', 'avalon' ),
+      'description' => __( 'Add yours social media links', 'avalon' ),
+      'priority' => 160,
     )
   );
- 
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'avalon_body_background_color', 
-      array(
-        'label' => __( 'Background Color', 'avalon' ), 
-        'section' => 'colors', 
-        'settings' => 'avalon_body_background_color' 
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_wordpress',
+    'default' => '',
+    'label' => __( 'WordPress Profile', 'avalon' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_github',
+    'default' => '',
+    'label' => __( 'GitHub', 'avalon' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_facebook',
+    'default' => '',
+    'label' => __( 'Facebook', 'avalon' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_twitter',
+    'default' => '',
+    'label' => __( 'Twitter', 'avalon' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_instagram',
+    'default' => '',
+    'label' => __( 'Instagram', 'avalon' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_google_plus',
+    'default' => '',
+    'label' => __( 'Google Plus', 'avalon' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_youtube',
+    'default' => '',
+    'label' => __( 'Youtube', 'avalon' ), 
+  );
+
+  foreach ( $social_medias as $social_media ) {
+    $wp_customize->add_setting(
+      $social_media[ 'slug' ], array(
+        'default' => $social_media[ 'default' ],
       )
+    );
+
+    $wp_customize->add_control(
+      $social_media[ 'slug' ],
+      array(
+        'label' => $social_media[ 'label' ],
+        'section' => 'social_media_settings_section',
+        'type' => 'text',
+      )
+    );
+  }
+
+  $wp_customize->add_section(
+    'avalon_footer_section',
+    array(
+        'title' => 'Footer',
+        'description' => 'Set a text to copyright.',
+        'priority' => 165,
     )
- );
+  );
+
+  $wp_customize->add_setting(
+    'copyright_textbox',
+    array(
+        'default' => 'Theme Avalon',
+    )
+  );
+
+  $wp_customize->add_control(
+    'copyright_textbox',
+    array(
+        'label' => 'Copyright text',
+        'section' => 'avalon_footer_section',
+        'type' => 'text',
+    )
+  );
 }
