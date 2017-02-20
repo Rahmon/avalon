@@ -28,21 +28,21 @@ add_action( 'wp_enqueue_scripts', 'avalon_scripts' );
 function avalon_register_menus() {
   register_nav_menus(
     array(
-    'header-menu' => __( 'Header Menu' ),
-    'footer-social-menu' => __( 'Footer Social Menu' )
+    'header-menu' => __( 'Header Menu', 'avalon' ),
+    'footer-social-menu' => __( 'Footer Social Menu', 'avalon' )
   )
   );
 }
 
 /**
- * Regiter sidebars.
+ * Register sidebars.
  */
 function avalon_register_sidebars() {
   register_sidebar(
     array(
     'id'            => 'primary',
-    'name'          => __( 'Left Sidebar' ),
-    'description'   => __( 'Left sidebar.' ),
+    'name'          => __( 'Left Sidebar', 'avalon' ),
+    'description'   => __( 'Left sidebar.', 'avalon' ),
     'before_widget' => '<div class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title text-center">',
@@ -58,7 +58,7 @@ add_action( 'widgets_init', 'avalon_register_sidebars' );
 function avalon_excerpt_more( $more ) {
   return sprintf( '... <a class="read-more" href="%1$s"> %2$s</a>',
                  get_permalink( get_the_ID() ),
-                 __( 'Read More' )
+                 __( 'Read More', 'avalon' )
                 );
 }
 add_filter( 'excerpt_more', 'avalon_excerpt_more' );
@@ -95,7 +95,7 @@ function avalon_pagination( $pages = '', $range = 4 ) {
           <a href="' . get_pagenum_link( $paged - 1 ) . '" aria-label="Previous">
             &lsaquo;&lsaquo;
             <span class="hidden-xs">'
-              . __( 'Previous' ) . '
+              . __( 'Previous', 'avalon' ) . '
             </span>
           </a>
         </li>
@@ -134,7 +134,7 @@ function avalon_pagination( $pages = '', $range = 4 ) {
       <li>
         <a href="' . get_pagenum_link( $paged + 1 ) . '"  aria-label="Next">
           <span class="hidden-xs">'
-            . __( 'Next') . '
+            . __( 'Next', 'avalon' ) . '
           </span>&rsaquo;&rsaquo;
         </a>
       </li>
@@ -204,13 +204,13 @@ add_action( 'customize_register', 'avalon_customizer_options' );
 function avalon_customizer_options( $wp_customize ) {
   $colors[] = array(
     'slug' => 'avalon_header_background_color',
-    'default' => '#349bc0',
+    'default' => '#f5f7fa',
     'label' => __( 'Header Background', 'avalon' ),
   );
 
   $colors[] = array(
     'slug' => 'avalon_main_background_color',
-    'default' => '#f5f7fa',
+    'default' => '#349bc0',
     'label' => __( 'Main Background', 'avalon' ),
   );
 
@@ -224,8 +224,7 @@ function avalon_customizer_options( $wp_customize ) {
     $wp_customize->add_setting(
       $color[ 'slug' ], array(
         'default' => $color[ 'default' ],
-        'type' => 'option',
-        'capability' => 'edit_theme_options'
+        'sanitize_callback' => 'sanitize_hex_color',
       )
     );
 
@@ -320,14 +319,14 @@ function avalon_customizer_options( $wp_customize ) {
   );
 
   $wp_customize->add_setting(
-    'copyright_textbox',
+    'copyright_text',
     array(
         'default' => 'Theme Avalon',
     )
   );
 
   $wp_customize->add_control(
-    'copyright_textbox',
+    'copyright_text',
     array(
         'label' => 'Copyright text',
         'section' => 'avalon_footer_section',

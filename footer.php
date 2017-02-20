@@ -17,7 +17,7 @@
 
   <div class="container-fluid" id="copyright">
     <p class="text-center">
-      © <?php bloginfo( 'name' ); ?>
+      <?php echo get_theme_mod( 'copyright_text', '© Avalon Theme' ); ?>
     </p>
   </div>
 </footer>

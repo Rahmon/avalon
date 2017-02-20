@@ -13,6 +13,22 @@
     <title><?php bloginfo('name') ?></title>
 
     <?php wp_head()?>
+
+    <style>
+      body {
+        background-color: <?php echo get_theme_mod( 'avalon_header_background_color', '#f5f7fa' ); ?>;
+      }
+
+      .navbar-default {
+        background-color: <?php echo get_theme_mod( 'avalon_main_background_color', '#349bc0' ); ?>; 
+        border-color: <?php echo get_theme_mod( 'avalon_main_background_color', '#349bc0' ); ?>;
+      }
+
+      .widget .title {
+        background-color: <?php echo get_theme_mod( 'avalon_widget_header_background_color', '#bdc3c7' ); ?>;  
+      }
+    </style>
+
   </head>
 
   <body>
