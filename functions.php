@@ -28,9 +28,8 @@ add_action( 'wp_enqueue_scripts', 'avalon_scripts' );
 function avalon_register_menus() {
   register_nav_menus(
     array(
-    'header-menu' => __( 'Header Menu', 'avalon' ),
-    'footer-social-menu' => __( 'Footer Social Menu', 'avalon' )
-  )
+      'header-menu' => __( 'Header Menu', 'avalon' )
+    )
   );
 }
 
@@ -128,7 +127,7 @@ function avalon_pagination( $pages = '', $range = 4 ) {
           </a>
         </li>';
 
-    if ( $paged < $pages /*&& $showitems < $pages*/ )
+    if ( $paged < $pages )
       echo
       '
       <li>
@@ -148,11 +147,6 @@ function avalon_pagination( $pages = '', $range = 4 ) {
 if ( ! function_exists( 'avalon_comment' ) ) {
   /**
    * Avalon comment template
-   *
-   * @param array $comment the comment array.
-   * @param array $args the comment args.
-   * @param int   $depth the comment depth.
-   * @since 1.0.0
    */
   function avalon_comment( $comment, $args, $depth ) {
     if ( 'div' == $args['style'] ) {

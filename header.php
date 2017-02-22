@@ -3,9 +3,9 @@
  * The template for displaying the header
  */
 ?><!DOCTYPE html>
-<html class="no-js" lang="pt">
+<html>
   <head>
-    <meta charset="utf-8">
+  	<meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
