@@ -1,3 +1,39 @@
+/*
+Theme Name: Avalon
+Theme URI: https://github.com/Rahmon/avalon
+Author: Rahmon
+Author URI: https://github.com/Rahmon
+Description: Avalon is a simple theme built with Boostrap 3.3.7.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, blog, translation-ready
+Text Domain: avalon
+*/
+
+
+/**
+ * Table of Contents
+ *
+ * 1.0 - Base
+ * 2.0 - Typography
+ * 3.0 - Button
+ * 4.0 - Icon
+ * 5.0 - Layout
+ * 6.0 - Navbar
+ * 7.0 - Blog
+ * 8.0 - Pagination
+ * 9.0 - Single Post
+ * 10.0 - Page
+ * 11.0 - Widget
+ * 12.0 - Footer
+*/
+
+
+/**
+ * 1.0 - Base
+ */
+
 html {
   position: relative;
   min-height: 100%;
@@ -7,7 +43,11 @@ body {
   margin-bottom: 95px;
 }
 
-/* Typography */
+
+/**
+ * 2.0 - Typography
+ */
+
 body, html {
   font-size: 16px;
 }
@@ -32,7 +72,11 @@ a.category:focus, a.category:hover {
   background-color: #253940 !important;
 }
 
-/* Button */
+
+/**
+ * 3.0 - Button
+ */
+
 .btn-avalon-default {
   font-size: 1rem;
   color: #f5f7fa;
@@ -55,7 +99,11 @@ a.category:focus, a.category:hover {
   color: #f5f7fa;
 }
 
-/* Icon */
+
+/**
+ * 4.0 - Icon
+ */
+
 i.fa {
   color: #349bc0;
 }
@@ -64,7 +112,11 @@ i.fa.not-found {
   font-size: 10rem;
 }
 
-/* Layout */
+
+/**
+ * 5.0 - Layout
+ */
+
 body {
   background-color: #f5f7fa;
 }
@@ -78,7 +130,11 @@ body {
   padding-left: 0;
 }
 
-/* Navbar */
+
+/**
+ * 6.0 - Navbar
+ */
+
 .navbar-default {
   border-radius: 0;
 }
@@ -113,7 +169,11 @@ body {
   color: #f5f7fa !important;
 }
 
-/* Blog */
+
+/**
+ * 7.0 - Blog
+ */
+
 #blog .post {
   clear: both;
   overflow: auto;
@@ -169,7 +229,11 @@ body {
   line-height: 1.7;
 }
 
-/* Pagination */
+
+/**
+ * 8.0 - Pagination
+ */
+
 .pagination {
   margin-top: 0;
 }
@@ -187,7 +251,11 @@ body {
   border: none;
 }
 
-/* Single Post */
+
+/**
+ * 9.0 - Single Post
+ */
+
 .single-post {
   margin-bottom: 40px;
 }
@@ -296,8 +364,10 @@ body {
 }
 
 
+/**
+ * 10.0 - Page
+ */
 
-/* Page */
 #page {
   margin-bottom: 30px;
 }
@@ -306,7 +376,11 @@ body {
   margin-top: 0;
 }
 
-/* Widget */
+
+/**
+ * 11.0 - Widget
+ */
+
 .widget {
   margin-bottom: 30px;
   border: 1px solid #bdc3c7;
@@ -369,7 +443,11 @@ body {
   margin-bottom: 10px;
 }
 
-/* Footer */
+
+/**
+ * 12.0 - Footer
+ */
+
 footer {
   color: #f5f7fa;
   background-color: #fff;

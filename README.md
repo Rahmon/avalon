@@ -1,2 +1,0 @@
-# avalon
-Avalon - WordPress Theme
