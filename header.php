@@ -3,14 +3,14 @@
  * The template for displaying the header
  */
 ?><!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
   <head>
   	<meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title><?php bloginfo('name') ?></title>
+    <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
     <?php wp_head()?>
 
@@ -31,7 +31,7 @@
 
   </head>
 
-  <body>
+  <body <?php body_class(); ?>>
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="col-md-12 no-gutter">

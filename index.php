@@ -6,10 +6,10 @@
           $categories = get_the_category();
           $link_category = get_category_link( $categories[0] );
     ?>
-          <div class="post">
+          <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="info">
               <a class="category" href="<?php echo $link_category ?>"><?php echo $categories[0]->name ?></a>
-              <?php comments_popup_link( '', __( '1 Comment' ), __( '% Comments' ), 'comments', '' ); ?>
+              <?php comments_popup_link( '', __( '1 Comment', 'avalon' ), __( '% Comments', 'avalon' ), 'comments', '' ); ?>
             </div>
 
             <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title()?></a></h2>

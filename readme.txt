@@ -1,12 +1,12 @@
-=== Avalon ===
+=== Avalon B===
 Contributors: Rahmon (https://github.com/Rahmon)
-Version: 1.0
+Version: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, blog, translation-ready, bootstrap
 
 == Description ==
-Avalon is a simple theme built with Boostrap 3.3.7.
+Avalon B is a simple theme built with Boostrap 3.3.7.
 
 * Responsive Layout
 * Custom Colors

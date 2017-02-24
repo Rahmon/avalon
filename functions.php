@@ -5,8 +5,15 @@
 function avalon_setup() {
   avalon_register_menus();
 
+  add_theme_support( 'title-tag' );
+  add_theme_support( "custom-background" );
+  add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'post-thumbnails' );
   set_post_thumbnail_size( 200, 125 );
+
+  if ( ! isset( $content_width ) ) {
+    $content_width = 760;
+  }
 }
 add_action( 'after_setup_theme', 'avalon_setup' );
 
@@ -66,87 +73,22 @@ add_filter( 'excerpt_more', 'avalon_excerpt_more' );
 * Pagination
 */
 function avalon_pagination( $pages = '', $range = 4 ) {
-
-  $showitems = ($range * 2) + 1;
-
-  global $paged;
-
-  if ( empty ( $paged ) ) $paged = 1;
-
-  if ( $pages == '' ) {
-    global $wp_query;
-
-    $pages = $wp_query->max_num_pages;
-
-    if ( !$pages ) {
-      $pages = 1;
-    }
-  }
-
-  if ( 1 != $pages ) {
-    echo '<div>';
-    echo '<nav><ul class="pagination">';
-
-    if ( $paged > 1 /*&& $showitems < $pages*/ )
-      echo
-        '
-        <li>
-          <a href="' . get_pagenum_link( $paged - 1 ) . '" aria-label="Previous">
-            &lsaquo;&lsaquo;
-            <span class="hidden-xs">'
-              . __( 'Previous', 'avalon' ) . '
-            </span>
-          </a>
-        </li>
-        ';
-
-    if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages )
-      echo
-        '<li>
-          <a href="' . get_pagenum_link( 1 ) . '">
-            <span class="hidden-xs">1</span>
-          </a>
-          </li>
-          <li><a class="gap">...</a></li>';
-
-    for ( $i = 1; $i <= $pages; $i++ ) {
-      if ( 1 != $pages && ( !( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
-        echo ( $paged == $i ) ? '<li class="active"><span>' . $i . '</span></li>' : '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a></li>';
-      }
-    }
-
-    if ( $paged < $pages - 1 &&  $paged + $range - 1 < $pages && $showitems < $pages )
-      echo
-        '
-        <li>
-          <a class="gap">...</a>
-        </li>
-        <li>
-          <a href="' . get_pagenum_link( $pages ) . '">
-            <span>' . $pages . '</span>
-          </a>
-        </li>';
-
-    if ( $paged < $pages )
-      echo
-      '
-      <li>
-        <a href="' . get_pagenum_link( $paged + 1 ) . '"  aria-label="Next">
-          <span class="hidden-xs">'
-            . __( 'Next', 'avalon' ) . '
-          </span>&rsaquo;&rsaquo;
-        </a>
-      </li>
-      ';
-
-    echo '</ul></nav>';
-    echo '</div>';
-  }
+  ?>
+    <div class="navigation">
+      <div class="alignleft">
+        <?php next_posts_link( '<i class="fa fa-long-arrow-left" aria-hidden="true"></i> ' . __( 'Older', 'avalon' ), '' ); ?>
+      </div>
+      <div class="alignright">
+        <?php previous_posts_link( __( 'Newer', 'avalon' ) . ' <i class="fa fa-long-arrow-right" aria-hidden="true"></i>' ); ?>
+      </div>
+    </div>
+  <?php
+  wp_link_pages();
 }
 
 if ( ! function_exists( 'avalon_comment' ) ) {
   /**
-   * Avalon comment template
+   * Avalon B comment template
    */
   function avalon_comment( $comment, $args, $depth ) {
     if ( 'div' == $args['style'] ) {
@@ -290,6 +232,7 @@ function avalon_customizer_options( $wp_customize ) {
     $wp_customize->add_setting(
       $social_media[ 'slug' ], array(
         'default' => $social_media[ 'default' ],
+        'sanitize_callback' => 'sanitize_text_field',
       )
     );
 
@@ -315,7 +258,8 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_setting(
     'copyright_text',
     array(
-        'default' => 'Theme Avalon',
+        'default' => 'Theme Avalon B',
+        'sanitize_callback' => 'sanitize_text_field',
     )
   );
 

@@ -1,10 +1,10 @@
 /*
-Theme Name: Avalon
+Theme Name: Avalon B
 Theme URI: https://github.com/Rahmon/avalon
 Author: Rahmon
 Author URI: https://github.com/Rahmon
-Description: Avalon is a simple theme built with Boostrap 3.3.7.
-Version: 1.0
+Description: Avalon B is a simple theme built with Boostrap 3.3.7.
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, blog, translation-ready
@@ -27,6 +27,9 @@ Text Domain: avalon
  * 10.0 - Page
  * 11.0 - Widget
  * 12.0 - Footer
+ * 13.0 - Alignments
+ * 14.0 - Captions
+ * 15.0 - Galleries
 */
 
 
@@ -123,6 +126,7 @@ body {
 
 #main {
   margin-top: 35px;
+  margin-bottom: 100px;
 }
 
 .no-gutter {
@@ -288,6 +292,11 @@ body {
   line-height: 1.7;
 }
 
+#page img,
+.single-post .content img {
+  max-width: 100%;
+}
+
 .single-post #post-author {
   margin-top: 40px;
   padding-top: 20px;
@@ -361,6 +370,15 @@ body {
 
 .single-post #comments .comment-form-comment #comment {
   width: 100%;
+}
+
+#tags {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.sticky {
+  display: block;
 }
 
 
@@ -507,4 +525,51 @@ footer #copyright {
 
 footer #copyright p, footer #copyright .widget ul, .widget footer #copyright ul {
   margin-top: 10px;
+}
+
+
+/**
+ * 13.0 - Alignments
+ */
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/**
+ * 14.0 - Captions
+ */
+
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+
+/**
+ * 15.0 - Galleries
+ */
+
+.gallery-caption {
+  display: block;
 }

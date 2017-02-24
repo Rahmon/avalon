@@ -63,7 +63,7 @@
 
   <div class="container-fluid" id="copyright">
     <p class="text-center">
-      <?php echo get_theme_mod( 'copyright_text', '© Avalon Theme' ); ?>
+      <?php echo get_theme_mod( 'copyright_text', 'Avalon B Theme' ); ?>
     </p>
   </div>
 </footer>
