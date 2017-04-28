@@ -1,43 +1,48 @@
-<?php get_header() ?>
-  <div class="col-sm-offset-1 col-sm-8 col-sm-push-3 col-md-offset-1 col-md-8 col-md-push-3 no-gutter" id="blog">
-    <?php
-      if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
-          $categories = get_the_category();
-          $link_category = get_category_link( $categories[0] );
-    ?>
-          <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="info">
-              <a class="category" href="<?php echo $link_category ?>"><?php echo $categories[0]->name ?></a>
-              <?php comments_popup_link( '', __( '1 Comment', 'avalon' ), __( '% Comments', 'avalon' ), 'comments', '' ); ?>
-            </div>
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme and one of the
+ * two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * For example, it puts together the home page when no home.php file exists.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Odin
+ * @since 2.2.0
+ */
 
-            <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title()?></a></h2>
+get_header(); ?>
 
-            <?php
-              if ( has_post_thumbnail() ) {
-            ?>
-                <a class="thumbnail" href="<?php the_permalink() ?>">
-                  <?php the_post_thumbnail() ?>
-                </a>
-            <?php
-              }
-            ?>
+	<div id="blog" class="col-sm-offset-1 col-sm-8 col-sm-push-3 col-md-offset-1 col-md-8 col-md-push-3 no-gutter" tabindex="-1" role="main">
 
-            <p class="content">
-              <?php echo get_the_excerpt() ?>
-            </p>
-          </div><!--end .post-->
-    <?php
-        endwhile;
-        avalon_pagination();
-      else:
-        echo '<h2>' . __( 'No Results', 'avalon') . '</h2>';
-      endif;
-    ?>
-  </div><!--end #blog-->
+			<?php
+				if ( have_posts() ) :
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
 
-  <?php get_sidebar() ?>
-</div><!--end #main-->
+						/*
+						 * Include the post format-specific template for the content. If you want to
+						 * use this in a child theme, then include a file called called content-___.php
+						 * (where ___ is the post format) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
 
-<?php get_footer()?>
+					endwhile;
+
+					// Post navigation.
+					odin_paging_nav();
+
+				else :
+					// If no content, include the "No posts found" template.
+					get_template_part( 'content', 'none' );
+
+				endif;
+			?>
+
+	</div><!-- #blog -->
+
+<?php
+get_sidebar();
+get_footer();

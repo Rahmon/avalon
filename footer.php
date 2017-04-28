@@ -1,4 +1,19 @@
-<footer class="footer">
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains footer content and the closing of the
+ * #main div element.
+ *
+ * @package Odin
+ * @since 2.2.0
+ */
+?>
+
+		</div><!-- .row -->
+	</div><!-- #wrapper -->
+
+	<footer class="footer">
   <div class="container wrap">
 
     <div class="row">
@@ -68,5 +83,10 @@
   </div>
 </footer>
 <?php wp_footer()?>
+</body>
+</html>
+
+
+	<?php wp_footer(); ?>
 </body>
 </html>
