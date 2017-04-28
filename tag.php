@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="<?php echo odin_classes_page_sidebar(); ?>">
+	<section id="primary" class="tag col-md-offset-1 col-md-8 col-md-push-3 no-gutter">
 		<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>

@@ -49,5 +49,14 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
+		<div id="tags">
+        	<?php the_tags( '<strong>Tags:</strong> ', ', ' ); ?>
+      	</div>
+
+      	<div id="post-author">
+        	<?php echo get_avatar( get_the_author_meta( 'ID' ), 48, 'retro', '', array( 'class' => 'img-circle' ) ); ?>
+
+			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a>
+      	</div>
 	<?php endif; ?>
 </div><!-- #post-## -->
