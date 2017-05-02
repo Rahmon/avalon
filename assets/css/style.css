@@ -255,23 +255,17 @@ body {
  * 8.0 - Pagination
  */
 
-.pagination {
+.pagination-wrap {
   margin-top: 0;
 }
 
-.pagination > .active > span,
-.pagination > .active > span:hover {
+ul.page-numbers > li > span.current, 
+ul.page-numbers > li > span.current:hover, 
+ul.page-numbers > li > span.current:focus {
   color: #f5f7fa;
   background-color: #349bc0;
-  border-color: transparent;
+  border-color: #ddd;
 }
-
-.pagination > li > a.gap {
-  color: #333;
-  background: transparent;
-  border: none;
-}
-
 
 /**
  * 9.0 - Single Post

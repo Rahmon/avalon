@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+	<main id="content" class="col-md-offset-1 col-md-8 col-md-push-3 no-gutter" tabindex="-1" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article <?php post_class(); ?>>
