@@ -302,14 +302,3 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
-
-/**
-* Filter the "read more" excerpt string link to the post.
-*/
-function avalon_excerpt_more( $more ) {
-  return sprintf( '... <a class="read-more" href="%1$s"> %2$s</a>',
-                 get_permalink( get_the_ID() ),
-                 __( 'Read More', 'avalon' )
-                );
-}
-add_filter( 'excerpt_more', 'avalon_excerpt_more' );
