@@ -64,7 +64,7 @@
 
             if ( get_theme_mod( $setting_slug ) ) {
             ?>
-              <a href="<?php echo $setting_slug ?>" target="_blank">
+              <a href="<?php echo get_theme_mod( $setting_slug ) ?>" target="_blank">
                 <i class="fa <?php echo $icon ?> fa-2x" aria-hidden="true"></i>
               </a>
             <?php  
@@ -82,11 +82,6 @@
     </p>
   </div>
 </footer>
-<?php wp_footer()?>
-</body>
-</html>
-
-
-	<?php wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
 </html>

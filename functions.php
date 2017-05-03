@@ -89,8 +89,6 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 			'uploads'       => true,
 		);
 
-		add_theme_support( 'custom-header', $default );
-
 		/**
 		 * Support Custom Background.
 		 */
@@ -302,3 +300,177 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+/**
+ * Customize Theme
+ */
+add_action( 'customize_register', 'avalon_customizer_options' );
+
+function avalon_customizer_options( $wp_customize ) {
+  $colors[] = array(
+    'slug' => 'avalon_header_background_color',
+    'default' => '#349bc0',
+    'label' => __( 'Header Background', 'avalon-b' ),
+  );
+
+  $colors[] = array(
+    'slug' => 'avalon_widget_header_background_color',
+    'default' => '#bdc3c7',
+    'label' => __( 'Widget Header Background', 'avalon-b' ),
+  );
+
+  foreach ( $colors as $color ) {
+    $wp_customize->add_setting(
+      $color[ 'slug' ], array(
+        'default' => $color[ 'default' ],
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'postMessage',
+      )
+    );
+
+    $wp_customize->add_control(
+      new WP_Customize_Color_Control(
+        $wp_customize,
+        $color[ 'slug' ], 
+        array(
+          'label' => $color[ 'label' ], 
+          'section' => 'colors', 
+          'settings' => $color[ 'slug' ] 
+        )
+      )
+    );
+  }
+
+  $wp_customize->add_section(
+    'social_media_settings_section',
+    array(
+      'title' => __( 'Social Media', 'avalon-b' ),
+      'description' => __( 'Add yours social media links', 'avalon-b' ),
+      'priority' => 160,
+    )
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_wordpress',
+    'default' => '',
+    'label' => __( 'WordPress Profile', 'avalon-b' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_github',
+    'default' => '',
+    'label' => __( 'GitHub', 'avalon-b' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_facebook',
+    'default' => '',
+    'label' => __( 'Facebook', 'avalon-b' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_twitter',
+    'default' => '',
+    'label' => __( 'Twitter', 'avalon-b' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_instagram',
+    'default' => '',
+    'label' => __( 'Instagram', 'avalon-b' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_google_plus',
+    'default' => '',
+    'label' => __( 'Google Plus', 'avalon-b' ), 
+  );
+
+  $social_medias[] = array(
+    'slug' => 'avalon_social_media_youtube',
+    'default' => '',
+    'label' => __( 'Youtube', 'avalon-b' ), 
+  );
+
+  foreach ( $social_medias as $social_media ) {
+    $wp_customize->add_setting(
+      $social_media[ 'slug' ], array(
+        'default' => $social_media[ 'default' ],
+        'sanitize_callback' => 'sanitize_text_field',
+      )
+    );
+
+    $wp_customize->add_control(
+      $social_media[ 'slug' ],
+      array(
+        'label' => $social_media[ 'label' ],
+        'section' => 'social_media_settings_section',
+        'type' => 'text',
+      )
+    );
+  }
+
+  $wp_customize->add_section(
+    'avalon_footer_section',
+    array(
+        'title' => 'Footer',
+        'description' => 'Set a text to copyright.',
+        'priority' => 165,
+    )
+  );
+
+  $wp_customize->add_setting(
+    'copyright_text',
+    array(
+        'default' => 'Theme Avalon B',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+  );
+
+  $wp_customize->add_control(
+    'copyright_text',
+    array(
+        'label' => 'Copyright text',
+        'section' => 'avalon_footer_section',
+        'type' => 'text',
+    )
+  );
+}
+
+/**
+ * Enqueues scripts and styles.
+ */
+function avalon_b_scripts() {
+  wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.7.0' );
+}
+add_action( 'wp_enqueue_scripts', 'avalon_b_scripts' );
+
+
+
+function avalon_b_customizer_css()
+{
+    ?>
+         <style type="text/css">
+         	.navbar-default { background-color: <?php echo get_theme_mod('avalon_header_background_color', '#349bc0'); ?>; }
+            .widget .title { background-color: <?php echo get_theme_mod('avalon_widget_header_background_color', '#bdc3c7'); ?>; } 
+         </style>
+    <?php
+}
+add_action( 'wp_head', 'avalon_b_customizer_css');
+
+/**
+ * Used by hook: 'customize_preview_init'
+ * 
+ * @see add_action('customize_preview_init',$func)
+ */
+function avalon_b_customizer_live_preview()
+{
+	wp_enqueue_script( 
+		  'avalon-b-themecustomizer',			//Give the script an ID
+		  get_template_directory_uri() . '/assets/js/avalon-b-customizer.js',//Point to file
+		  array( 'jquery', 'customize-preview' ),	//Define dependencies
+		  '',						//Define a version (optional) 
+		  true						//Put script in footer?
+	);
+}
+add_action( 'customize_preview_init', 'avalon_b_customizer_live_preview' );
