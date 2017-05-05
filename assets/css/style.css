@@ -134,9 +134,11 @@ body {
   margin-bottom: 100px;
 }
 
-.no-gutter {
-  padding-right: 0;
-  padding-left: 0;
+@media (min-width: 768px) {
+	.no-gutter {
+		padding-right: 0;
+		padding-left: 0;
+	}
 }
 
 .page-header {
@@ -240,6 +242,10 @@ body {
   line-height: 1.7;
 }
 
+.post.pingback {
+	margin-bottom: 10px;
+	border-bottom: none;
+}
 
 /**
  * 8.0 - Pagination
@@ -335,9 +341,12 @@ ul.page-numbers > li > span.current:focus {
   margin-left: -10px;
 }
 
-#comments .comment-author time {
+#comments .comment-author .media-heading {
+	margin-top: 4px;
+}
+
+#comments .comment-author .time-comment {
   float: right;
-  margin-top: 4px;
   font-size: 0.875rem;
 }
 
