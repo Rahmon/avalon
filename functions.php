@@ -55,14 +55,14 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		/**
 		 * Add support for multiple languages.
 		 */
-		load_theme_textdomain( 'odin', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'avalon-b', get_template_directory() . '/languages' );
 
 		/**
 		 * Register nav menus.
 		 */
 		register_nav_menus(
 			array(
-				'main-menu' => __( 'Main Menu', 'odin' )
+				'main-menu' => __( 'Main Menu', 'avalon-b' )
 			)
 		);
 
@@ -173,9 +173,9 @@ add_action( 'after_setup_theme', 'odin_setup_features' );
 function odin_widgets_init() {
 	register_sidebar(
 		array(
-			'name' => __( 'Main Sidebar', 'odin' ),
+			'name' => __( 'Main Sidebar', 'avalon-b' ),
 			'id' => 'main-sidebar',
-			'description' => __( 'Site Main Sidebar', 'odin' ),
+			'description' => __( 'Site Main Sidebar', 'avalon-b' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4 class="title text-center">',

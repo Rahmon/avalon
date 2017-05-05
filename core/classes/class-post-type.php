@@ -64,20 +64,20 @@ class Odin_Post_Type {
 	 */
 	protected function labels() {
 		$default = array(
-			'name'               => sprintf( __( '%ss', 'odin' ), $this->name ),
-			'singular_name'      => sprintf( __( '%s', 'odin' ), $this->name ),
-			'view_item'          => sprintf( __( 'View %s', 'odin' ), $this->name ),
-			'edit_item'          => sprintf( __( 'Edit %s', 'odin' ), $this->name ),
-			'search_items'       => sprintf( __( 'Search %s', 'odin' ), $this->name ),
-			'update_item'        => sprintf( __( 'Update %s', 'odin' ), $this->name ),
-			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'odin' ), $this->name ),
-			'menu_name'          => sprintf( __( '%ss', 'odin' ), $this->name ),
-			'add_new'            => __( 'Add New', 'odin' ),
-			'add_new_item'       => sprintf( __( 'Add New %s', 'odin' ), $this->name ),
-			'new_item'           => sprintf( __( 'New %s', 'odin' ), $this->name ),
-			'all_items'          => sprintf( __( 'All %ss', 'odin' ), $this->name ),
-			'not_found'          => sprintf( __( 'No %s found', 'odin' ), $this->name ),
-			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'odin' ), $this->name )
+			'name'               => sprintf( __( '%ss', 'avalon-b' ), $this->name ),
+			'singular_name'      => sprintf( __( '%s', 'avalon-b' ), $this->name ),
+			'view_item'          => sprintf( __( 'View %s', 'avalon-b' ), $this->name ),
+			'edit_item'          => sprintf( __( 'Edit %s', 'avalon-b' ), $this->name ),
+			'search_items'       => sprintf( __( 'Search %s', 'avalon-b' ), $this->name ),
+			'update_item'        => sprintf( __( 'Update %s', 'avalon-b' ), $this->name ),
+			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'avalon-b' ), $this->name ),
+			'menu_name'          => sprintf( __( '%ss', 'avalon-b' ), $this->name ),
+			'add_new'            => __( 'Add New', 'avalon-b' ),
+			'add_new_item'       => sprintf( __( 'Add New %s', 'avalon-b' ), $this->name ),
+			'new_item'           => sprintf( __( 'New %s', 'avalon-b' ), $this->name ),
+			'all_items'          => sprintf( __( 'All %ss', 'avalon-b' ), $this->name ),
+			'not_found'          => sprintf( __( 'No %s found', 'avalon-b' ), $this->name ),
+			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'avalon-b' ), $this->name )
 		);
 
 		return array_merge( $default, $this->labels );

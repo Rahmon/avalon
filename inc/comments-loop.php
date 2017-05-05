@@ -18,7 +18,7 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 			case 'trackback' :
 ?>
 				<li class="media post pingback">
-					<p><?php _e( 'Pingback:', 'odin' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'odin' ), '<span class="edit-link">', '</span>' ); ?></p>
+					<p><?php _e( 'Pingback:', 'avalon-b' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'avalon-b' ), '<span class="edit-link">', '</span>' ); ?></p>
 <?php
 			break;
 			default :
@@ -37,15 +37,15 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 														 esc_url( get_comment_link( $comment->comment_ID ) ),
 														 get_comment_time( 'c' ),
 														 get_comment_date(), 
-														 __( 'at', 'odin' ),
+														 __( 'at', 'avalon-b' ),
 														 get_comment_time(), 
-														 __( 'said:', 'odin' ) ); ?>
+														 __( 'said:', 'avalon-b' ) ); ?>
 								</h5>
 
-								<?php edit_comment_link( __( 'Edit', 'odin' ), '<span class="edit-link">', ' </span>' ); ?>
+								<?php edit_comment_link( __( 'Edit', 'avalon-b' ), '<span class="edit-link">', ' </span>' ); ?>
 
 								<?php if ( $comment->comment_approved == '0' ) : ?>
-								<p class="comment-awaiting-moderation alert alert-info"><?php _e( 'Your comment is awaiting moderation.', 'odin' ); ?></p>
+								<p class="comment-awaiting-moderation alert alert-info"><?php _e( 'Your comment is awaiting moderation.', 'avalon-b' ); ?></p>
 								<?php endif; ?>
 							</footer><!-- .comment-meta -->
 
@@ -54,7 +54,7 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 							</div><!-- .comment-content -->
 
 							<div class="comment-metadata">
-								<span class="reply-link"><?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Respond', 'odin' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></span>
+								<span class="reply-link"><?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Respond', 'avalon-b' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></span>
 							</div><!-- .comment-metadata -->
 						</div>
 					</article><!-- .comment-body -->
