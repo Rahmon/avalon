@@ -36,16 +36,20 @@
 
             <a class="navbar-brand" href="<?php echo esc_url( home_url() ) ?>"><?php bloginfo( 'name' ); ?></a>
           </div>
+          <nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
           <?php
             wp_nav_menu(
               array(
-                'theme_location' => 'header-menu',
-                'container_class' => 'collapse navbar-collapse',
-                'container_id' => 'bs-navbar-collapse',
-                'menu_class' => 'nav navbar-nav navbar-right'
+                'theme_location'  => 'header-menu',
+                'depth'           => 2,
+                'container'       => false,
+                'menu_class'      => 'nav navbar-nav navbar-right',
+                'fallback_cb'     => 'Odin_Bootstrap_Nav_Walker::fallback',
+                'walker'          => new Odin_Bootstrap_Nav_Walker()
               )
             );
           ?>
+          </nav>
         </div>
       </div>
     </nav>
