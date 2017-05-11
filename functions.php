@@ -24,7 +24,7 @@ if ( ! isset( $content_width ) ) {
  * Odin Classes.
  */
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
-require_once get_template_directory() . '/core/classes/class-shortcodes.php';
+// require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
 // require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
@@ -41,7 +41,7 @@ require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.p
 /**
  * Odin Widgets.
  */
-require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
+//require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
 
 if ( ! function_exists( 'odin_setup_features' ) ) {
 
