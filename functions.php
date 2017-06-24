@@ -272,11 +272,6 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 require_once get_template_directory() . '/core/helpers.php';
 
 /**
- * WP Custom Admin.
- */
-require_once get_template_directory() . '/inc/admin.php';
-
-/**
  * Comments loop.
  */
 require_once get_template_directory() . '/inc/comments-loop.php';
@@ -331,11 +326,11 @@ function avalon_customizer_options( $wp_customize ) {
     $wp_customize->add_control(
       new WP_Customize_Color_Control(
         $wp_customize,
-        $color[ 'slug' ], 
+        $color[ 'slug' ],
         array(
-          'label' => $color[ 'label' ], 
-          'section' => 'colors', 
-          'settings' => $color[ 'slug' ] 
+          'label' => $color[ 'label' ],
+          'section' => 'colors',
+          'settings' => $color[ 'slug' ]
         )
       )
     );
@@ -353,43 +348,43 @@ function avalon_customizer_options( $wp_customize ) {
   $social_medias[] = array(
     'slug' => 'avalon_social_media_wordpress',
     'default' => '',
-    'label' => __( 'WordPress Profile', 'avalon-b' ), 
+    'label' => __( 'WordPress Profile', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_github',
     'default' => '',
-    'label' => __( 'GitHub', 'avalon-b' ), 
+    'label' => __( 'GitHub', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_facebook',
     'default' => '',
-    'label' => __( 'Facebook', 'avalon-b' ), 
+    'label' => __( 'Facebook', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_twitter',
     'default' => '',
-    'label' => __( 'Twitter', 'avalon-b' ), 
+    'label' => __( 'Twitter', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_instagram',
     'default' => '',
-    'label' => __( 'Instagram', 'avalon-b' ), 
+    'label' => __( 'Instagram', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_google_plus',
     'default' => '',
-    'label' => __( 'Google Plus', 'avalon-b' ), 
+    'label' => __( 'Google Plus', 'avalon-b' ),
   );
 
   $social_medias[] = array(
     'slug' => 'avalon_social_media_youtube',
     'default' => '',
-    'label' => __( 'Youtube', 'avalon-b' ), 
+    'label' => __( 'Youtube', 'avalon-b' ),
   );
 
   foreach ( $social_medias as $social_media ) {
@@ -452,7 +447,7 @@ function avalon_b_customizer_css()
     ?>
          <style type="text/css">
          	.navbar-default { background-color: <?php echo get_theme_mod('avalon_header_background_color', '#349bc0'); ?>; }
-            .widget .title { background-color: <?php echo get_theme_mod('avalon_widget_header_background_color', '#bdc3c7'); ?>; } 
+            .widget .title { background-color: <?php echo get_theme_mod('avalon_widget_header_background_color', '#bdc3c7'); ?>; }
          </style>
     <?php
 }
@@ -460,16 +455,16 @@ add_action( 'wp_head', 'avalon_b_customizer_css');
 
 /**
  * Used by hook: 'customize_preview_init'
- * 
+ *
  * @see add_action('customize_preview_init',$func)
  */
 function avalon_b_customizer_live_preview()
 {
-	wp_enqueue_script( 
+	wp_enqueue_script(
 		  'avalon-b-themecustomizer',			//Give the script an ID
 		  get_template_directory_uri() . '/assets/js/avalon-b-customizer.js',//Point to file
 		  array( 'jquery', 'customize-preview' ),	//Define dependencies
-		  '',						//Define a version (optional) 
+		  '',						//Define a version (optional)
 		  true						//Put script in footer?
 	);
 }
