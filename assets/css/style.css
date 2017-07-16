@@ -182,8 +182,8 @@ body {
   color: #f5f7fa !important;
 }
 
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
 	color: #333;
 	background-color: transparent;
@@ -193,7 +193,7 @@ body {
 /**
  * 7.0 - Blog
  */
-
+.page,
 .post {
   clear: both;
   overflow: auto;
@@ -262,8 +262,8 @@ body {
   margin-top: 0;
 }
 
-ul.page-numbers > li > span.current, 
-ul.page-numbers > li > span.current:hover, 
+ul.page-numbers > li > span.current,
+ul.page-numbers > li > span.current:hover,
 ul.page-numbers > li > span.current:focus {
   color: #f5f7fa;
   background-color: #349bc0;
@@ -285,6 +285,7 @@ ul.page-numbers > li > span.current:focus {
   border-radius: 4px;
 }
 
+.page .info,
 .post .info {
   margin-bottom: 10px;
   padding: 5px 0;
@@ -336,7 +337,7 @@ ul.page-numbers > li > span.current:focus {
   margin-bottom: 30px;
   padding: 0 10px 5px;
   background-color: #fff;
-  border: 1px solid #bdc3c7;  
+  border: 1px solid #bdc3c7;
 }
 
 #comments .bypostauthor .comment-body {

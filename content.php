@@ -11,13 +11,26 @@
 
 <?php
 	$categories = get_the_category();
-  	$link_category = get_category_link( $categories[0] );
+
+	if ( ! empty( $categories ) ) {
+	  $link_category = get_category_link( $categories[0] );
+	}
+	else {
+		$link_category = '';
+	}
+
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
+
 	<div class="info">
-      <a class="category" href="<?php echo $link_category ?>"><?php echo $categories[0]->name ?></a>
+			<?php
+				if ( ! empty( $categories ) ) {
+			?>
+      		<a class="category" href="<?php echo $link_category ?>"><?php echo $categories[0]->name ?></a>
+			<?php
+				}
+			?>
       <?php comments_popup_link( '', __( '1 Comment', 'avalon-b' ), __( '% Comments', 'avalon-b' ), 'comments', '' ); ?>
     </div>
 
