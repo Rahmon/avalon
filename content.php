@@ -63,7 +63,7 @@
 			?>
 		</div><!-- .entry-content -->
 		<div id="tags">
-        	<?php the_tags( '<strong>Tags:</strong> ', ', ' ); ?>
+        	<?php the_tags( '<strong>' . esc_html__( 'Tags:', 'avalon-b' ) . '</strong> ', ', ' ); ?>
       	</div>
 
       	<div id="post-author">

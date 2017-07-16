@@ -403,8 +403,8 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_section(
     'avalon_footer_section',
     array(
-        'title' => 'Footer',
-        'description' => 'Set a text to copyright.',
+        'title' => __( 'Footer', 'avalon-b' ),
+        'description' => __( 'Set a text to copyright.', 'avalon-b' ),
         'priority' => 165,
     )
   );
@@ -412,7 +412,7 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_setting(
     'copyright_text',
     array(
-        'default' => 'Theme Avalon B',
+        'default' => __( 'Theme Avalon B', 'avalon-b' ),
         'sanitize_callback' => 'sanitize_text_field',
     )
   );
@@ -420,8 +420,8 @@ function avalon_customizer_options( $wp_customize ) {
   $wp_customize->add_control(
     'copyright_text',
     array(
-        'label' => 'Copyright text',
-        'section' => 'avalon_footer_section',
+        'label' => __( 'Copyright text', 'avalon-b' ),
+        'section' => __( 'avalon_footer_section', 'avalon-b' ),
         'type' => 'text',
     )
   );
