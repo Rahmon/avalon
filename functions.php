@@ -24,24 +24,6 @@ if ( ! isset( $content_width ) ) {
  * Odin Classes.
  */
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
-// require_once get_template_directory() . '/core/classes/class-shortcodes.php';
-require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
-// require_once get_template_directory() . '/core/classes/class-theme-options.php';
-// require_once get_template_directory() . '/core/classes/class-options-helper.php';
-// require_once get_template_directory() . '/core/classes/class-post-type.php';
-// require_once get_template_directory() . '/core/classes/class-taxonomy.php';
-// require_once get_template_directory() . '/core/classes/class-metabox.php';
-// require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
-// require_once get_template_directory() . '/core/classes/class-contact-form.php';
-// require_once get_template_directory() . '/core/classes/class-post-form.php';
-// require_once get_template_directory() . '/core/classes/class-user-meta.php';
-// require_once get_template_directory() . '/core/classes/class-post-status.php';
-// require_once get_template_directory() . '/core/classes/class-term-meta.php';
-
-/**
- * Odin Widgets.
- */
-//require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
 
 if ( ! function_exists( 'odin_setup_features' ) ) {
 
@@ -118,26 +100,6 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 				'posts_per_page' => get_option( 'posts_per_page' )
 			)
 		);
-
-		/**
-		 * Add support for Post Formats.
-		 */
-		// add_theme_support( 'post-formats', array(
-		//     'aside',
-		//     'gallery',
-		//     'link',
-		//     'image',
-		//     'quote',
-		//     'status',
-		//     'video',
-		//     'audio',
-		//     'chat'
-		// ) );
-
-		/**
-		 * Support The Excerpt on pages.
-		 */
-		// add_post_type_support( 'page', 'excerpt' );
 
 		/**
 		 * Switch default core markup for search form, comment form, and comments to output valid HTML5.
@@ -225,9 +187,6 @@ function odin_enqueue_scripts() {
 		// Grunt main file with Bootstrap, FitVids and others libs.
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 	}
-
-	// Grunt watch livereload in the browser.
-	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
 
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
