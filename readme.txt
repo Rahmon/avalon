@@ -3,7 +3,7 @@ Contributors: rahmohn
 Version: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, blog, translation-ready, bootstrap, odin-framework
+Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, blog, translation-ready, bootstrap, odin-framework
 
 == Description ==
 Avalon B is a simple theme built with Odin Framework.
