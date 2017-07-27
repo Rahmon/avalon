@@ -37,7 +37,7 @@
           <?php
             wp_nav_menu(
               array(
-                'theme_location'  => 'header-menu',
+                'theme_location'  => 'main-menu',
                 'depth'           => 2,
                 'container'       => false,
                 'menu_class'      => 'nav navbar-nav navbar-right',
