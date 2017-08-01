@@ -61,13 +61,14 @@
           foreach ( $social_medias as $social_media ) {
             $setting_slug = $social_media[ 'setting_slug' ];
             $icon = $social_media[ 'icon' ];
+						$url = get_theme_mod( $setting_slug );
 
-            if ( get_theme_mod( $setting_slug ) ) {
+            if ( $url ) {
             ?>
-              <a href="<?php echo get_theme_mod( $setting_slug ) ?>" target="_blank">
+              <a href="<?php echo esc_url( $url ) ?>" target="_blank">
                 <i class="fa <?php echo $icon ?> fa-2x" aria-hidden="true"></i>
               </a>
-            <?php  
+            <?php
             }
           }
         ?>
@@ -78,7 +79,16 @@
 
   <div class="container-fluid" id="copyright">
     <p class="text-center">
-      <?php echo get_theme_mod( 'copyright_text', 'Avalon B Theme' ); ?>
+      <?php
+			 	$copyright_text = get_theme_mod( 'copyright_text' );
+
+				if ( $copyright_text ) {
+					echo $copyright_text;
+				}
+				else {
+					echo 'Avalon B Theme';
+				}
+			?>
     </p>
   </div>
 </footer>
