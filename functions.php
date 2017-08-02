@@ -398,10 +398,12 @@ add_action( 'wp_enqueue_scripts', 'avalon_b_scripts' );
 
 function avalon_b_customizer_css()
 {
+	$navbar_background_color = get_theme_mod( 'avalon_header_background_color', '#349bc0' );
+	$widget_title_background_color = get_theme_mod( 'avalon_widget_header_background_color', '#349bc0' );
     ?>
          <style type="text/css">
-         	.navbar-default { background-color: <?php echo get_theme_mod('avalon_header_background_color', '#349bc0'); ?>; }
-            .widget .title { background-color: <?php echo get_theme_mod('avalon_widget_header_background_color', '#bdc3c7'); ?>; }
+         	.navbar-default { background-color: <?php echo esc_html( $navbar_background_color ); ?>; }
+          .widget .title { background-color: <?php echo esc_html( $widget_title_background_color ); ?>; }
          </style>
     <?php
 }
