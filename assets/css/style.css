@@ -206,7 +206,7 @@ body {
 }
 
 .post .info .category {
-  padding: 2px 10px;
+  padding: 0 10px 3px;
   color: #f5f7fa;
   background-color: #349bc0;
   border-radius: 4px;
@@ -295,6 +295,10 @@ ul.page-numbers > li > span.current:focus {
 
 .post .info #comments {
   margin-left: 15px;
+}
+
+.single-post .gallery {
+  clear: both;
 }
 
 #page p,
@@ -581,6 +585,12 @@ footer #copyright p, footer #copyright .widget ul, .widget footer #copyright ul 
 /**
  * 15.0 - Galleries
  */
+
+ .gallery .gallery-item {
+     display: inline-block;
+     vertical-align: top;
+     float: none !important;
+ }
 
 .gallery-caption {
   display: block;
