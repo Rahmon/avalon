@@ -26,14 +26,14 @@
         <div class="col-md-12 no-gutter">
           <div class="navbar-header">
 
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
             </button>
 
             <a class="navbar-brand" href="<?php echo esc_url( home_url() ) ?>"><?php bloginfo( 'name' ); ?></a>
           </div>
-          <nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
+          <nav id="navbar" class="collapse navbar-collapse navbar-main-navigation" role="navigation">
           <?php
             wp_nav_menu(
               array(
