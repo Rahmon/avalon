@@ -193,11 +193,15 @@ body {
 /**
  * 7.0 - Blog
  */
-.page,
+
+.page #content,
+.post {
+  margin-bottom: 30px;
+}
+
 .post {
   clear: both;
   overflow: auto;
-  margin-bottom: 30px;
   border-bottom: 1px solid #bdc3c7;
 }
 
