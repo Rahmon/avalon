@@ -10,7 +10,6 @@ Avalon B is a simple theme built with Odin Framework.
 
 * Responsive Layout
 * Custom Colors
-* Custom Header
 * Social Links
 * The GPL v2.0 or later license.
 
