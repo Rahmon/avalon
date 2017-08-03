@@ -1,6 +1,6 @@
 === Avalon B===
 Contributors: rahmohn
-Version: 1.2
+Version: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, blog, translation-ready, bootstrap, odin-framework
@@ -48,6 +48,9 @@ License: MIT/OFL
 Source: http://fontawesome.io
 
 == Changelog ==
+
+= 1.3 =
+* Released: Ago 2, 2017
 
 = 1.2 =
 * Released: May 4, 2017
