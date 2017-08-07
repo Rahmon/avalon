@@ -27,7 +27,7 @@
           <div class="navbar-header">
 
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only"><?php _e( 'Toggle navigation', 'avalon-b' ) ?></span>
               <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
             </button>
 
