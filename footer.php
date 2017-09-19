@@ -83,7 +83,7 @@
 			 	$copyright_text = get_theme_mod( 'copyright_text' );
 
 				if ( $copyright_text ) {
-					echo esc_attr( $copyright_text );
+					echo esc_html( $copyright_text );
 				}
 				else {
 					echo 'Avalon B Theme';
