@@ -65,7 +65,7 @@
 
             if ( $url ) {
             ?>
-              <a href="<?php echo esc_url( $url ) ?>" target="_blank">
+              <a href="<?php echo esc_attr( $url ) ?>" target="_blank">
                 <i class="fa <?php echo $icon ?> fa-2x" aria-hidden="true"></i>
               </a>
             <?php

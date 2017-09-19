@@ -149,17 +149,6 @@ function odin_widgets_init() {
 add_action( 'widgets_init', 'odin_widgets_init' );
 
 /**
- * Flush Rewrite Rules for new CPTs and Taxonomies.
- *
- * @since 2.2.0
- */
-function odin_flush_rewrite() {
-	flush_rewrite_rules();
-}
-
-add_action( 'after_switch_theme', 'odin_flush_rewrite' );
-
-/**
  * Load site scripts.
  *
  * @since 2.2.0
@@ -346,7 +335,7 @@ function avalon_customizer_options( $wp_customize ) {
     $wp_customize->add_setting(
       $social_media[ 'slug' ], array(
         'default' => $social_media[ 'default' ],
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'esc_url_raw',
       )
     );
 
@@ -355,7 +344,7 @@ function avalon_customizer_options( $wp_customize ) {
       array(
         'label' => $social_media[ 'label' ],
         'section' => 'social_media_settings_section',
-        'type' => 'text',
+        'type' => 'url',
       )
     );
   }
