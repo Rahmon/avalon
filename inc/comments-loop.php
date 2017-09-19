@@ -11,7 +11,6 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 	 * @param  int    $depth   Comment depth.
 	 */
 	function odin_comments_loop( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
 
 		switch ( $comment->comment_type ) {
 			case 'pingback' :
@@ -33,12 +32,12 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 								<h5 class="media-heading">
 									<?php echo sprintf( '<strong><span class="fn">%1$s</span></strong>
 														 <a class="time-comment" href="%2$s"><time datetime="%3$s">%4$s %5$s </time><span class="says"> %6$s</span></a>',
-														 get_comment_author_link(), 
+														 get_comment_author_link(),
 														 esc_url( get_comment_link( $comment->comment_ID ) ),
 														 get_comment_time( 'c' ),
-														 get_comment_date(), 
+														 get_comment_date(),
 														 __( 'at', 'avalon-b' ),
-														 get_comment_time(), 
+														 get_comment_time(),
 														 __( 'said:', 'avalon-b' ) ); ?>
 								</h5>
 
