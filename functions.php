@@ -185,6 +185,10 @@ function odin_enqueue_scripts() {
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array( 'jquery' ), null, true );
 	}
 
+	// HTML5.
+	wp_enqueue_script( 'html5', $template_url . '/assets/js/html5.js' );
+	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
