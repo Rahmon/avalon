@@ -49,6 +49,9 @@ Source: http://fontawesome.io
 
 == Changelog ==
 
+= 1.3.2 =
+* Released: Set 19, 2017
+
 = 1.3.1 =
 * Released: Ago 14, 2017
 
