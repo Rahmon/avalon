@@ -40,10 +40,10 @@ if ( ! function_exists( 'odin_product_search' ) ) {
 	 *
 	 * @since 2.2.6
 	 *
-	 * @uses  is_woocommerce_activated() check if WooCommerce is activated
+	 * @uses  avalon_b_is_woocommerce_activated() check if WooCommerce is activated
 	 */
 	function odin_product_search() {
-		if ( is_woocommerce_activated() ) { ?>
+		if ( avalon_b_is_woocommerce_activated() ) { ?>
 			<div class="site-search">
 				<?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
 			</div>
@@ -59,10 +59,10 @@ if ( ! function_exists( 'odin_header_cart' ) ) {
 	 *
 	 * @since 2.2.6
 	 *
-	 * @uses  is_woocommerce_activated() check if WooCommerce is activated
+	 * @uses  avalon_b_is_woocommerce_activated() check if WooCommerce is activated
 	 */
 	function odin_header_cart() {
-		if ( is_woocommerce_activated() ) { ?>
+		if ( avalon_b_is_woocommerce_activated() ) { ?>
 			<ul class="site-header-cart menu">
 				<?php odin_cart_link(); ?>
 				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>

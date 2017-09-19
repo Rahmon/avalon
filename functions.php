@@ -204,15 +204,10 @@ add_filter( 'stylesheet_uri', 'odin_stylesheet_uri', 10, 2 );
 
 /**
  * Query WooCommerce activation
- *
- * @since  2.2.6
- *
- * @return boolean
  */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-	function is_woocommerce_activated() {
-		return class_exists( 'woocommerce' ) ? true : false;
-	}
+
+function avalon_b_is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
 }
 
 /**
